@@ -68,16 +68,12 @@ def create_langchain_pipeline(retriever, template, temperature=0):
 
 def create_retriever(chunks):
     try:
-        
         # Load OpenAI API key from .env file
         load_dotenv(find_dotenv())
 
-
-        # Setup vector database
         client = weaviate.Client(
             embedded_options = EmbeddedOptions()
         )
-
         # Populate vector database
         vectorstore = Weaviate.from_documents(
             client = client,    
@@ -86,9 +82,8 @@ def create_retriever(chunks):
             by_text = False
         )
 
-        # Define vectorstore as retriever to enable semantic search
         retriever = vectorstore.as_retriever()
-        logger.info("automatic evaluation data generated succesfully.")
+        logger.info("retriever create succesfully.")
 
         return retriever
     
@@ -109,6 +104,9 @@ def load_file(file_path):
     except Exception as e:
         logger.error(f"An unexpected error occurred: {e}")
         return None 
+    
+
+    
 
 def ragas_evaulation(response):
     try:
@@ -129,6 +127,9 @@ def ragas_evaulation(response):
     except Exception as e:
         logger.error(f"An unexpected error occurred: {e}")
         return None 
+
+
+
 
 
 
