@@ -41,7 +41,6 @@ class ChunkingStrategy:
             "Naive": self.naive_chuncking
         }
         pass
-
     
     def naive_chuncking(self, file_path: str, chunk_size:int=500, chunk_overlap:int=50):
         try:
