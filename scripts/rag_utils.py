@@ -9,10 +9,13 @@ from langchain.schema.output_parser import StrOutputParser
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Weaviate
 
+from langchain.agents.format_scratchpad import format_to_openai_function_messages
+from langchain.tools.render import format_tool_to_openai_function
 
 from logger import logger
 from datasets import Dataset
 import random
+import docx
 
 import weaviate
 from dotenv import load_dotenv,find_dotenv
@@ -21,31 +24,107 @@ from weaviate.embedded import EmbeddedOptions
 from ragas import evaluate
 from ragas.metrics import ( faithfulness, answer_relevancy, context_recall, context_precision)
 
+from chunking import ChunkingStrategy, Chunking
+
  
 # Load OpenAI API key from .env file
 load_dotenv(find_dotenv())
 
 
-def data_loader(file_path= '../prompts/context.txt', chunk_size=500, chunk_overlap=50):
-    try:
-        loader = TextLoader(file_path)
-        documents = loader.load()
+class LangchainPipeline:
+    def __init__(self, database, embedding_type):
+        self.retriver = None
+        self.chunking_strategy = Chunking(ChunkingStrategy.NAIVE)
+        self.knowledge_sources = []
+    
+        pass
 
-        # Chunk the data
-        text_splitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
-        chunks = text_splitter.split_documents(documents)
-        
-        logger.info("data loaded to vector database successfully")
-        return chunks
+
+    
+
+def read_questions_answers(file_path: str) -> tuple[list[str], list[str]]:
+    """
+    Read questions and answers from a text file and return them as two separate lists.
+
+    Args:
+        file_path (str): The file path of the input text file.
+
+    Returns:
+        tuple[list[str], list[str]]: A tuple containing two lists - one for questions and one for answers.
+    """
+    questions = []
+    answers = []
+
+    try:
+        with open(file_path, "r") as file:
+            lines = file.readlines()
+            i = 0
+            while i < len(lines):
+                if lines[i].startswith("Q"):
+                    question = lines[i].split(": ", 1)[-1].strip()  # Remove initials
+                    answer = lines[i+1].split(": ", 1)[-1].strip()  # Remove initials
+                    questions.append(question)
+                    answers.append(answer)
+                    i += 2
+                else:
+                    i += 1
+
+    except FileNotFoundError:
+        print(f"Error: File not found at path '{file_path}'")
+        return [], []
+
+    return questions, answers
+
+
+def convert_docx_to_txt(docx_file_path: str) -> str:
+    """
+    Convert a DOCX file to a TXT file.
+
+    Args:
+        docx_file_path (str): The file path of the input DOCX file.
+
+    Returns:
+        str: The file path of the output TXT file.
+
+    Raises:
+        Exception: If an error occurs during the conversion process.
+    """
+    try:
+        # Read content from DOCX file
+        doc = docx.Document(docx_file_path)
+        text_content = ""
+        for paragraph in doc.paragraphs:
+            text_content += paragraph.text + "\n"
+
+        # Extract the file name and directory path
+        file_name = docx_file_path.split("/")[-1].split(".")[0]
+        directory_path = "/".join(docx_file_path.split("/")[:-1])
+
+        # Write content to TXT file
+        txt_file_path = f"{directory_path}/{file_name}.txt"
+        with open(txt_file_path, "w") as txt_file:
+            txt_file.write(text_content)
+
+        logger.info(f"Successfully converted {docx_file_path} to TXT format.")
+        return txt_file_path
+
     except Exception as e:
-        logger.error(f"An unexpected error occurred: {e}")
-        return None 
+        logger.error(f"Error occurred while converting {docx_file_path} to TXT: {e}")
+        return ""
+
 
 
 def create_langchain_pipeline(retriever, template, temperature=0):
     try:
+
+        tool_functions = list(map(format_tool_to_openai_function, []))
+
         # Define LLM
         llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=temperature)
+
+        llm = ChatOpenAI(temperature=0.1, model = 'gpt-4-1106-preview')\
+            .bind(functions = tool_functions)
+
 
         # Define prompt template
         
@@ -104,9 +183,6 @@ def load_file(file_path):
     except Exception as e:
         logger.error(f"An unexpected error occurred: {e}")
         return None 
-    
-
-    
 
 def ragas_evaulation(response):
     try:
@@ -129,13 +205,9 @@ def ragas_evaulation(response):
         return None 
 
 
-
-
-
-
 def get_generated_prompt_with_evaulation(question):
     try:
-        chunks = data_loader()
+        chunks = create_chunks()
         retriever = create_retriever(chunks)
 
         prompt_template = load_file('../prompts/prompt-generation-prompt.txt')

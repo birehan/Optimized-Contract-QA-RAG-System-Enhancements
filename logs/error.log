@@ -1,0 +1,62 @@
+2024-02-21 23:40:20,271:logger:An unexpected error occurred: Error loading ../data/Evaluation Sets/Robinson Advisory.docx
+2024-02-22 00:37:17,216:logger:An unexpected error occurred: Dataset feature "ground_truths" should be of type Sequence[string], got <class 'datasets.features.features.Value'>
+2024-02-22 01:59:36,624:logger:An unexpected error occurred: expected str, bytes or os.PathLike object, not ChunkingStrategy
+2024-02-22 02:42:33,947:logger:An unexpected error occurred: expected str, bytes or os.PathLike object, not ChunkingStrategy
+2024-02-22 02:44:21,792:logger:An unexpected error occurred: expected str, bytes or os.PathLike object, not ChunkingStrategy
+2024-02-22 02:47:04,405:logger:An unexpected error occurred: expected str, bytes or os.PathLike object, not ChunkingStrategy
+2024-02-22 02:47:16,126:logger:An unexpected error occurred: expected str, bytes or os.PathLike object, not ChunkingStrategy
+2024-02-22 02:47:42,096:logger:An unexpected error occurred: expected str, bytes or os.PathLike object, not ChunkingStrategy
+2024-02-22 02:51:49,431:logger:An unexpected error occurred: 'str' object has no attribute 'page_content'
+2024-02-22 11:11:20,440:logger:Chunking strategy 'NAIVE' is not implemented.
+2024-02-22 11:11:58,558:logger:Chunking strategy 'SEMANTIC' is not implemented.
+2024-02-22 11:13:33,449:logger:Chunking strategy 'RECURSIVE' is not implemented.
+2024-02-22 11:14:15,817:logger:Chunking strategy 'RECURSIVE' is not implemented.
+2024-02-22 11:14:16,723:logger:Chunking strategy 'RECURSIVE' is not implemented.
+2024-02-22 11:14:17,208:logger:Chunking strategy 'RECURSIVE' is not implemented.
+2024-02-22 11:14:17,678:logger:Chunking strategy 'RECURSIVE' is not implemented.
+2024-02-22 11:14:46,214:logger:Chunking strategy 'NAIVE' is not implemented.
+2024-02-22 11:36:34,378:logger:An unexpected error occurred: from_documents() missing 1 required positional argument: 'embedding'
+2024-02-22 11:37:40,400:logger:An unexpected error occurred: Could not import pymilvus python package. Please install it with `pip install pymilvus`.
+2024-02-22 11:38:23,467:logger:An unexpected error occurred: (grpcio 1.62.0 (/home/babi/miniconda3/envs/week10/lib/python3.8/site-packages), Requirement.parse('grpcio<=1.60.0,>=1.49.1'), {'pymilvus'})
+2024-02-22 11:39:21,267:logger:An unexpected error occurred: (grpcio 1.62.0 (/home/babi/miniconda3/envs/week10/lib/python3.8/site-packages), Requirement.parse('grpcio<=1.60.0,>=1.49.1'), {'pymilvus'})
+2024-02-22 11:41:19,907:logger:An unexpected error occurred: (grpcio 1.62.0 (/home/babi/miniconda3/envs/week10/lib/python3.8/site-packages), Requirement.parse('grpcio<=1.60.0,>=1.49.1'), {'pymilvus'})
+2024-02-22 11:54:00,140:logger:Error creating Milvus client: __init__() got an unexpected keyword argument 'host'
+2024-02-22 11:57:38,542:logger:Error creating Milvus client: __init__() got an unexpected keyword argument 'host'
+2024-02-22 13:09:38,611:logger:An unexpected error occurred: Could not import pinecone python package. Please install it with `pip install pinecone-client`.
+2024-02-22 13:10:31,431:logger:An unexpected error occurred: No active indexes found in your Pinecone project, are you sure you're using the right Pinecone API key and Environment? Please double check your Pinecone dashboard.
+2024-02-22 13:12:31,833:logger:An unexpected error occurred: Index 'None' not found in your Pinecone project. Did you mean one of the following indexes: contract-rag
+2024-02-22 13:14:00,941:logger:An unexpected error occurred: Index 'None' not found in your Pinecone project. Did you mean one of the following indexes: contract-rag
+2024-02-22 13:15:57,802:logger:An unexpected error occurred: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'content-type': 'application/json', 'Content-Length': '105', 'x-pinecone-request-latency-ms': '5238', 'x-pinecone-request-id': '9148140936764084635', 'date': 'Thu, 22 Feb 2024 10:15:57 GMT', 'x-envoy-upstream-service-time': '29', 'server': 'envoy', 'Via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'})
+HTTP response body: {"code":3,"message":"Vector dimension 1536 does not match the dimension of the index 20000","details":[]}
+
+2024-02-23 16:18:01,113:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-23 16:18:01,129:logger:Invalid vector store type provided.
+2024-02-23 16:18:01,231:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:20:50,559:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-23 16:20:50,568:logger:Invalid vector store type provided.
+2024-02-23 16:20:50,616:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:21:19,433:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-23 16:21:19,440:logger:Invalid vector store type provided.
+2024-02-23 16:21:19,482:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:29:21,094:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:29:21,096:logger:Invalid vector store type provided.
+2024-02-23 16:29:21,326:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:30:41,309:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:30:41,311:logger:Invalid vector store type provided.
+2024-02-23 16:30:41,329:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:32:27,248:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:32:27,250:logger:Invalid vector store type provided.
+2024-02-23 16:32:27,272:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:32:37,487:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:32:37,489:logger:Invalid vector store type provided.
+2024-02-23 16:32:37,517:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
+2024-02-23 16:33:47,827:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:33:47,832:logger:Invalid vector store type provided.
+2024-02-23 16:33:47,869:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
+2024-02-23 16:34:45,317:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:34:45,326:logger:Invalid vector store type provided.
+2024-02-23 16:34:45,356:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
+2024-02-23 16:41:11,945:logger:Invalid vector store type provided.
+2024-02-23 16:41:11,965:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
