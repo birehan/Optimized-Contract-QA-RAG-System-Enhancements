@@ -18,7 +18,7 @@ class ChunkingStrategy(Enum):
 load_dotenv(find_dotenv())
 
 class Chunking:
-    def __init__(self, chunking_strategy):
+    def __init__(self, chunking_strategy=ChunkingStrategy.SEMANTIC):
         if chunking_strategy not in ChunkingStrategy:
             raise ValueError("Invalid chunking strategy. Please use a valid ChunkingStrategy enum value.")
         self.chunking_strategy = chunking_strategy

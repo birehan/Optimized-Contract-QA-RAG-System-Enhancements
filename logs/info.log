@@ -89,3 +89,66 @@ HTTP response body: {"code":3,"message":"Vector dimension 1536 does not match th
 2024-02-22 13:34:37,362:logger:Milvus retriever created successfully.
 2024-02-22 13:35:53,501:logger:Weaviate retriever created successfully.
 2024-02-22 13:36:19,927:logger:Pinecone retriever created successfully.
+2024-02-23 16:18:01,113:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-23 16:18:01,129:logger:Invalid vector store type provided.
+2024-02-23 16:18:01,231:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:20:50,559:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-23 16:20:50,568:logger:Invalid vector store type provided.
+2024-02-23 16:20:50,616:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:21:19,433:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-23 16:21:19,440:logger:Invalid vector store type provided.
+2024-02-23 16:21:19,482:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:29:21,094:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:29:21,096:logger:Invalid vector store type provided.
+2024-02-23 16:29:21,326:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:30:41,309:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:30:41,311:logger:Invalid vector store type provided.
+2024-02-23 16:30:41,329:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:32:27,248:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:32:27,250:logger:Invalid vector store type provided.
+2024-02-23 16:32:27,272:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:32:37,487:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:32:37,489:logger:Invalid vector store type provided.
+2024-02-23 16:32:37,517:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
+2024-02-23 16:33:47,827:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:33:47,832:logger:Invalid vector store type provided.
+2024-02-23 16:33:47,869:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
+2024-02-23 16:34:45,317:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:34:45,326:logger:Invalid vector store type provided.
+2024-02-23 16:34:45,356:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
+2024-02-23 16:41:11,943:logger:ChromaDB vectorstore created successfully.
+2024-02-23 16:41:11,945:logger:Invalid vector store type provided.
+2024-02-23 16:41:11,965:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
+2024-02-23 16:43:28,068:logger:ChromaDB vectorstore created successfully.
+2024-02-23 16:43:28,070:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 16:43:28,093:logger:langchain with rag pipeline created successfully.
+2024-02-23 16:59:28,346:logger:ChromaDB vectorstore created successfully.
+2024-02-23 16:59:28,348:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 16:59:28,366:logger:langchain with rag pipeline created successfully.
+2024-02-23 17:29:11,493:logger:ChromaDB vectorstore created successfully.
+2024-02-23 17:29:11,495:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 17:29:11,513:logger:langchain with rag pipeline created successfully.
+2024-02-23 17:39:10,414:logger:ChromaDB vectorstore created successfully.
+2024-02-23 17:39:10,415:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 17:39:10,431:logger:langchain with rag pipeline created successfully.
+2024-02-23 17:41:09,635:logger:Data source added to the system successfully
+2024-02-23 17:43:53,142:logger:Data source added to the system successfully
+2024-02-23 17:47:54,801:logger:ChromaDB vectorstore created successfully.
+2024-02-23 17:47:54,802:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 17:47:54,820:logger:langchain with rag pipeline created successfully.
+2024-02-23 17:48:06,581:logger:Data source added to the system successfully
+2024-02-23 17:52:17,466:logger:ChromaDB vectorstore created successfully.
+2024-02-23 17:52:17,468:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 17:52:17,498:logger:langchain with rag pipeline created successfully.
+2024-02-23 17:52:28,350:logger:ChromaDB vectorstore created successfully.
+2024-02-23 17:52:28,352:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 17:52:28,369:logger:langchain with rag pipeline created successfully.
+2024-02-23 17:52:35,374:logger:Data source added to the system successfully
+2024-02-23 17:55:30,289:logger:ChromaDB vectorstore created successfully.
+2024-02-23 17:55:30,291:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 17:55:30,308:logger:langchain with rag pipeline created successfully.
+2024-02-23 17:56:02,453:logger:Data source added to the system successfully
+2024-02-23 17:58:03,758:logger:ChromaDB vectorstore created successfully.
+2024-02-23 17:58:03,759:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 17:58:03,777:logger:langchain with rag pipeline created successfully.
+2024-02-23 17:58:22,849:logger:Data source added to the system successfully

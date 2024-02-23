@@ -31,3 +31,32 @@ Reason: Bad Request
 HTTP response headers: HTTPHeaderDict({'content-type': 'application/json', 'Content-Length': '105', 'x-pinecone-request-latency-ms': '5238', 'x-pinecone-request-id': '9148140936764084635', 'date': 'Thu, 22 Feb 2024 10:15:57 GMT', 'x-envoy-upstream-service-time': '29', 'server': 'envoy', 'Via': '1.1 google', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'})
 HTTP response body: {"code":3,"message":"Vector dimension 1536 does not match the dimension of the index 20000","details":[]}
 
+2024-02-23 16:18:01,113:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-23 16:18:01,129:logger:Invalid vector store type provided.
+2024-02-23 16:18:01,231:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:20:50,559:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-23 16:20:50,568:logger:Invalid vector store type provided.
+2024-02-23 16:20:50,616:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:21:19,433:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-23 16:21:19,440:logger:Invalid vector store type provided.
+2024-02-23 16:21:19,482:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:29:21,094:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:29:21,096:logger:Invalid vector store type provided.
+2024-02-23 16:29:21,326:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:30:41,309:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:30:41,311:logger:Invalid vector store type provided.
+2024-02-23 16:30:41,329:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:32:27,248:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:32:27,250:logger:Invalid vector store type provided.
+2024-02-23 16:32:27,272:logger:An unexpected error occurred: 'RagPipeline' object has no attribute 'retriever'
+2024-02-23 16:32:37,487:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:32:37,489:logger:Invalid vector store type provided.
+2024-02-23 16:32:37,517:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
+2024-02-23 16:33:47,827:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:33:47,832:logger:Invalid vector store type provided.
+2024-02-23 16:33:47,869:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
+2024-02-23 16:34:45,317:logger:An unexpected error occurred: Expected IDs to be a non-empty list, got []
+2024-02-23 16:34:45,326:logger:Invalid vector store type provided.
+2024-02-23 16:34:45,356:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
+2024-02-23 16:41:11,945:logger:Invalid vector store type provided.
+2024-02-23 16:41:11,965:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>

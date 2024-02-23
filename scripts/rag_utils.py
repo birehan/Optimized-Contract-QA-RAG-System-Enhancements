@@ -9,13 +9,8 @@ from langchain.schema.output_parser import StrOutputParser
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Weaviate
 
-
-from langchain.llms import AutoChain
-from langchain.llms import AutoModelForSeq2SeqLM
-from langchain.llms import SentenceSplitter
-from langchain.llms import SemanticChunker
-
-
+from langchain.agents.format_scratchpad import format_to_openai_function_messages
+from langchain.tools.render import format_tool_to_openai_function
 
 from logger import logger
 from datasets import Dataset
@@ -29,107 +24,21 @@ from weaviate.embedded import EmbeddedOptions
 from ragas import evaluate
 from ragas.metrics import ( faithfulness, answer_relevancy, context_recall, context_precision)
 
+from chunking import ChunkingStrategy, Chunking
+
  
 # Load OpenAI API key from .env file
 load_dotenv(find_dotenv())
 
 
-class ChunkingStrategy:
-    def __init__(self, chunking_strategy):
-        self.chunking_strategy = chunking_strategy
-        self.chunking_pairs  = {
-            "Naive": self.naive_chuncking
-        }
-        pass
-    
-    def naive_chuncking(self, file_path: str, chunk_size:int=500, chunk_overlap:int=50):
-        try:
-            loader = TextLoader(file_path)
-            documents = loader.load()
-
-            # Chunk the data
-            text_splitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
-            chunks = text_splitter.split_documents(documents)
-            
-            logger.info("data loaded to vector database successfully")
-            return chunks
-        except Exception as e:
-            logger.error(f"An unexpected error occurred: {e}")
-            return None
-    
-    def semantic_chunking(file_path, chunk_size=1000, chunk_overlap=200, model_name="allenai/longformer-base-4k"):
-        """
-        Performs semantic chunking on a given text using Langchain.
-
-        Args:
-        file_path: the path of file to be chuncked.
-        chunk_size: The maximum size of each chunk (in characters).
-        chunk_overlap: The amount of overlap between chunks (in characters).
-        model_name: The name of the pre-trained language model to use for
-            semantic similarity calculations.
-
-        Returns:
-        A list of semantically meaningful chunks.
-        """
-
-
-
-        try:
-
-            with open(file_path) as f:
-                text = f.read()
-
-            # Load the language model
-            model = AutoChain.from_pretrained(model_name)
-
-            # Load the sentence splitter
-            sentence_splitter = SentenceSplitter()
-
-            # Load the semantic chunker
-            chunker = SemanticChunker(
-                model=model,
-                sentence_splitter=sentence_splitter,
-                chunk_size=chunk_size,
-                chunk_overlap=chunk_overlap
-            )
-
-            # Chunk the text
-            chunks = chunker(text)
-
-            return chunks
-    
-        except Exception as e:
-            logger.error(f"An unexpected error occurred: {e}")
-            return None
-
-
-
-
-
-
 class LangchainPipeline:
     def __init__(self, database, embedding_type):
         self.retriver = None
-        self.chunking_strategy = ChunkingStrategy("Naive")
-        self.knowledge_source = []
+        self.chunking_strategy = Chunking(ChunkingStrategy.NAIVE)
+        self.knowledge_sources = []
     
         pass
 
-
-    def create_chunks(file_path: str, chunk_size:int=500, chunk_overlap:int=50):
-        try:
-            loader = TextLoader(file_path)
-            documents = loader.load()
-
-            # Chunk the data
-            text_splitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
-            chunks = text_splitter.split_documents(documents)
-            
-            logger.info("data loaded to vector database successfully")
-            return chunks
-        except Exception as e:
-            logger.error(f"An unexpected error occurred: {e}")
-            return None 
 
     
 
@@ -165,9 +74,6 @@ def read_questions_answers(file_path: str) -> tuple[list[str], list[str]]:
         return [], []
 
     return questions, answers
-
-
-
 
 
 def convert_docx_to_txt(docx_file_path: str) -> str:
@@ -208,13 +114,17 @@ def convert_docx_to_txt(docx_file_path: str) -> str:
 
 
 
-
-
-
 def create_langchain_pipeline(retriever, template, temperature=0):
     try:
+
+        tool_functions = list(map(format_tool_to_openai_function, []))
+
         # Define LLM
         llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=temperature)
+
+        llm = ChatOpenAI(temperature=0.1, model = 'gpt-4-1106-preview')\
+            .bind(functions = tool_functions)
+
 
         # Define prompt template
         
