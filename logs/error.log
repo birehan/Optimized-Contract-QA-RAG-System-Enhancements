@@ -60,3 +60,6 @@ HTTP response body: {"code":3,"message":"Vector dimension 1536 does not match th
 2024-02-23 16:34:45,356:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
 2024-02-23 16:41:11,945:logger:Invalid vector store type provided.
 2024-02-23 16:41:11,965:logger:An unexpected error occurred: Expected a Runnable, callable or dict.Instead got an unsupported type: <class 'NoneType'>
+2024-02-23 19:54:32,552:logger:An unexpected error occurred: Could not convert HumanMessage(content='Who are the parties to the Agreement and what are their defined names?') with type HumanMessage: did not recognize Python value type when inferring an Arrow data type
+2024-02-23 20:14:43,274:logger:An unexpected error occurred: Could not convert HumanMessage(content='Who are the parties to the Agreement and what are their defined names?') with type HumanMessage: did not recognize Python value type when inferring an Arrow data type
+2024-02-23 20:17:20,952:logger:An unexpected error occurred: Could not convert HumanMessage(content='Who are the parties to the Agreement and what are their defined names?') with type HumanMessage: did not recognize Python value type when inferring an Arrow data type

@@ -31,15 +31,6 @@ from chunking import ChunkingStrategy, Chunking
 load_dotenv(find_dotenv())
 
 
-class LangchainPipeline:
-    def __init__(self, database, embedding_type):
-        self.retriver = None
-        self.chunking_strategy = Chunking(ChunkingStrategy.NAIVE)
-        self.knowledge_sources = []
-    
-        pass
-
-
     
 
 def read_questions_answers(file_path: str) -> tuple[list[str], list[str]]:
