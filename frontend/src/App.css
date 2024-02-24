@@ -1,0 +1,140 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body{
+  background:white;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+*,
+:before,
+:after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+header{
+    --tw-shadow: 0 -2px 30px 0 rgba(0,0,0,.15);
+    --tw-shadow-colored: 0 -2px 30px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  font-family: Inter var, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol,
+    "Noto Color Emoji";
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+}
+
+body {
+  margin: 0;
+  line-height: inherit;
+}
+
+.container {
+  position: fixed;
+  top: 1px;
+  left: 1px;
+  width: 1px;
+  height: 0px;
+  padding: 0px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border-width: 0px;
+  display: none;
+}
+
+.container-2 {
+  background-image: radial-gradient(rgb(183, 229, 255) 3px, transparent 0px);
+  background-size: 40px 40px;
+  background-position: 20px -12px;
+}
+
+.container-3 {
+  background-image: radial-gradient(rgb(183, 229, 255) 4px, transparent 0px);
+  background-size: 40px 40px;
+  background-position: 0px -12px;
+}
+
+.container-4 {
+  background-image: radial-gradient(rgb(183, 229, 255) 5px, transparent 0px);
+  background-size: 40px 40px;
+  background-position: 20px -12px;
+}
+
+.container-5 {
+  background-image: radial-gradient(rgb(183, 229, 255) 6px, transparent 0px);
+  background-size: 40px 40px;
+  background-position: 0px -12px;
+}
+
+.container-6 {
+  background-image: radial-gradient(rgb(183, 229, 255) 3px, transparent 0px);
+  background-size: 100px 100px;
+  background-position: 88px -43px;
+}
+.container-7 {
+  background-image: radial-gradient(rgb(183, 229, 255) 4px, transparent 0px);
+  background-size: 100px 100px;
+  background-position: 40px -43px;
+}
+
+.container-8 {
+  background-image: radial-gradient(rgb(183, 229, 255) 5px, transparent 0px);
+  background-size: 100px 100px;
+  background-position: 88px -43px;
+}
+.container-9 {
+  background-image: radial-gradient(rgb(183, 229, 255) 6px, transparent 0px);
+  background-size: 100px 100px;
+  background-position: 40px -43px;
+}
