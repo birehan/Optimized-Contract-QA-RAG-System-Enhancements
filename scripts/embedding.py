@@ -87,10 +87,4 @@ openai_embedding = embedding_factory.create_embedding(EmbeddingType.OPENAI)
 # Create an OpenAI embedding using a specific model
 specific_openai_embedding = embedding_factory.create_embedding(EmbeddingType.OPENAI, model="text-curie-001")
 
-# Create other embeddings with default or specified models (replace with actual classes)
-# use_embedding = embedding_factory.create_embedding(EmbeddingType.UNIVERSAL_SENTENCE_ENCODER, model="distilbert-base-uncased-multilingual-cased")
-# lauda_embedding = embedding_factory.create_embedding(EmbeddingType.LAUDA)
-# flair_embedding = embedding_factory.create_embedding(EmbeddingType.FLAIR, model="de-wiki-base-v2")
-# sentence_transformers_embedding = embedding_factory.create_embedding(EmbeddingType.SentenceTransformers, model="paraphrase-multilingual-mpnet-base-v2")
 
-# Use the created
