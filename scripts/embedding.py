@@ -1,28 +1,13 @@
 import enum
+from langchain_community.embeddings import SentenceTransformerEmbeddings, OpenAIEmbeddings
 
-from langchain_openai import OpenAIEmbeddings
+
+
+from dotenv import load_dotenv,find_dotenv
 
 class EmbeddingType(enum.Enum):
-    """
-    Enum representing supported embedding types.
-
-    - OPENAI: OpenAI API text embeddings.
-    # Add four additional embedding types based on your research and requirements:
-    # - UNIVERSAL_SENTENCE_ENCODER: TensorFlow Universal Sentence Encoder embeddings.
-    # - LAUDA: LAUDA multilingual embeddings.
-    # - FLAIR: FLAIR text embeddings with various pre-trained models.
-    # - SentenceTransformers: SentenceTransformers with support for multiple pre-trained models.
-
-    OPENAI = "openai"
-    # ... Other embedding types as defined above ...
-
-    """
-
-    OPENAI = "openai"
-    UNIVERSAL_SENTENCE_ENCODER = "universal_sentence_encoder"
-    LAUDA = "lauda"
-    FLAIR = "flair"
-    SENTENCE_TRANSFORMERS= "sentence_transformers"
+    OPENAI_EMBEDDING = "OpenAI Embedding"
+    SENTENCE_TRANSFORMER_EMBEDDING = "Sentence Transformers"
 
 class EmbeddingFactory:
     """
@@ -34,17 +19,15 @@ class EmbeddingFactory:
     """
 
     def __init__(self):
+        load_dotenv(find_dotenv())
+
+
         """
         Initializes the factory with available embedding types, their implementation classes, and default models.
         """
         self.embedding_classes = {
-            EmbeddingType.OPENAI: (OpenAIEmbeddings, "text-davinci-003"),  # (class, default model)
-            # Add mappings for other embedding types, classes, and default models here
-            # Example:
-            # EmbeddingType.UNIVERSAL_SENTENCE_ENCODER: (USESentenceEncoder, "tf-universal-sentence-encoder-multilingual"),
-            # EmbeddingType.LAUDA: (LaudaEmbeddings, "laus-base"),
-            # EmbeddingType.FLAIR: (FlairTextEmbeddings, "en-wiki-base-v2"),
-            # EmbeddingType.SentenceTransformers: (SentenceTransformersEmbeddings, "all-mpnet-base-v2"),
+            EmbeddingType.SENTENCE_TRANSFORMER_EMBEDDING: (SentenceTransformerEmbeddings, "all-MiniLM-L6-v2"),  
+            EmbeddingType.OPENAI_EMBEDDING: (OpenAIEmbeddings, "text-embedding-ada-002"),  
         }
 
     def create_embedding(self, embedding_type: EmbeddingType, model: str = None) -> object:
@@ -66,25 +49,20 @@ class EmbeddingFactory:
             raise ValueError(f"Unsupported embedding type: {embedding_type}")
 
         embedding_class, default_model = self.embedding_classes[embedding_type]
-        return embedding_class(model=model or default_model)
+        print(embedding_class, default_model)
+        if embedding_type == EmbeddingType.OPENAI_EMBEDDING:
+            return embedding_class(model=model or default_model)
+        else:
+            return embedding_class(model_name=model or default_model)
 
-    def list_supported_embeddings(self) -> list[EmbeddingType]:
+    @staticmethod
+    def list_supported_embeddings():
         """
-        Returns a list of supported embedding types.
-
-        Returns:
-            list[EmbeddingType]: The list of supported embedding types.
         """
 
-        return list(self.embedding_classes.keys())
-
-# Example usage:
-embedding_factory = EmbeddingFactory()
-
-# Create an OpenAI embedding using default model
-openai_embedding = embedding_factory.create_embedding(EmbeddingType.OPENAI)
-
-# Create an OpenAI embedding using a specific model
-specific_openai_embedding = embedding_factory.create_embedding(EmbeddingType.OPENAI, model="text-curie-001")
-
+        return {
+            "items": [{"key": enum_type.name, "value":enum_type.value } for enum_type in EmbeddingType],
+            "name": "embedding",
+            "label": "Embedding Models"
+        }
 

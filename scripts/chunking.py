@@ -10,9 +10,9 @@ from data_extractor import DataExtractor
 from data_cleaning import DataCleaner
 
 class ChunkingStrategy(Enum):
-    NAIVE = "NAIVE"
-    SEMANTIC = "SEMANTIC"
-    RECURSIVE = "RECURSIVE"
+    SEMANTIC = "Semantic"
+    NAIVE = "Naive"
+    RECURSIVE = "Recursive"
 
 # Load OpenAI API key from .env file
 load_dotenv(find_dotenv())
@@ -52,11 +52,11 @@ class Chunking:
         try:
             
             text = self.data_extract_tool.extract_data(file_path)
-            cleaned_text = DataCleaner.clean_text(text)
+            # cleaned_text = DataCleaner.clean_text(text)
 
             # Chunk the data
             text_splitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
-            chunks = text_splitter.create_documents([cleaned_text])
+            chunks = text_splitter.create_documents([text])
             
             logger.info("data loaded to vector database successfully")
             return chunks
@@ -69,7 +69,7 @@ class Chunking:
 
 
             text = self.data_extract_tool.extract_data(file_path)
-            cleaned_text = DataCleaner.clean_text(text)
+            # cleaned_text = DataCleaner.clean_text(text)
 
             # Chunk the data
             text_splitter = RecursiveCharacterTextSplitter(
@@ -78,7 +78,7 @@ class Chunking:
                 length_function=len,
                 is_separator_regex=False,
             )
-            chunks = text_splitter.create_documents([cleaned_text])
+            chunks = text_splitter.create_documents([text])
 
             
             logger.info("data loaded to vector database successfully")
@@ -104,15 +104,29 @@ class Chunking:
 
         try:
             text = self.data_extract_tool.extract_data(file_path)
-            cleaned_text = DataCleaner.clean_text(text)
+            # cleaned_text = DataCleaner.clean_text(text)
 
 
             text_splitter = SemanticChunker(OpenAIEmbeddings())
-            chunks = text_splitter.create_documents([cleaned_text])
+            chunks = text_splitter.create_documents([text])
 
             return chunks
     
         except Exception as e:
             logger.error(f"An unexpected error occurred: {e}")
             return None
+    
+
+    @staticmethod
+    def list_supported_chunkings():
+        """
+        """
+
+        return {
+            "items": [{"key": enum_type.name, "value":enum_type.value } for enum_type in ChunkingStrategy],
+            "name": "chunking",
+            "label": "Chunking Strategies"
+        }
+
+
 

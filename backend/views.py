@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, request
 import json
 import logging
 from docx import Document
-
+from utils import get_rag_options, create_rag_pipeline
 main_bp = Blueprint('main', __name__)
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 from werkzeug.utils import secure_filename
@@ -21,7 +21,56 @@ sys.path.append(os.path.abspath(os.path.join('../scripts')))
 from rag_pipeline import RagPipeline
 from rag_evaluation import RagEvaluation
 
-rag_chain = RagPipeline()
+global rag_chain
+rag_chain = None
+
+@main_bp.route('/api/v1/rag-options', methods=['GET'])
+def rag_options():
+    response = {
+        "data": None,
+        "error": None
+    }
+    statusCode = 404
+    try:
+        response["data"] = get_rag_options()
+        statusCode = 200
+
+    except Exception as error:
+        logging.error(error)
+        response['error'] = f"An error occured: {error}"
+        statusCode = 404
+
+    return jsonify(response), statusCode
+
+
+@main_bp.route('/api/v1/create-rag', methods=['POST'])
+def create_rag():
+    global rag_chain
+    data = request.json
+    response = {
+        "data": None,
+        "error": None
+    }
+    statusCode = 400
+
+    try:
+     
+        rag_chain = create_rag_pipeline(data)
+        response["data"] = "Rag Pipeline created successfully"
+        statusCode = 200
+
+    except KeyError as e:
+        error_message = f"Missing required field: {str(e)}"
+        logging.error(error_message)
+        response['error'] = error_message
+
+    except Exception as e:
+        error_message = f"An error occurred: {str(e)}"
+        logging.error(error_message)
+        response['error'] = error_message
+
+    return jsonify(response), statusCode
+
 
 @main_bp.route('/api/v1/file-upload', methods=['POST'])
 def upload_file():
@@ -48,6 +97,10 @@ def upload_file():
             rag_chain.add_datasource(filepath)
 
             response["data"] = "File added to vectorstore successfully"
+            print("data upload success")
+            print("data upload success")
+            print("data upload success")
+
             statusCode = 200
         else:
             response["error"] = "File format not supported"

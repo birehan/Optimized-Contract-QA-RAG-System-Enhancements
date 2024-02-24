@@ -16,10 +16,10 @@ from enum import Enum
 import os
 
 class VectorStore(Enum):
-    MILVUS = "milvus"
-    WEAVIATE = "weaviate"
-    PINECONE = "pinecone"
-    CHROMA = "chroma"
+    CHROMA = "Chroma"
+    MILVUS = "Milvus"
+    WEAVIATE = "Weaviate"
+    PINECONE = "Pinecone"
 
 class VectorStoreFactory:
     def __init__(self):
@@ -65,3 +65,13 @@ class VectorStoreFactory:
         vectorstore = Chroma(embedding_function=embedding)
         logger.info("ChromaDB vectorstore created successfully.")
         return vectorstore
+
+    @staticmethod
+    def list_supported_vectorStores():
+        """
+        """
+        return {
+            "items": [{"key": enum_type.name, "value":enum_type.value } for enum_type in VectorStore],
+            "name": "vectorStore",
+            "label": "VectorStore Databases"
+        }

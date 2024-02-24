@@ -1,4 +1,3 @@
-import textract
 from docx import Document
 import fitz  # PyMuPDF
 
@@ -28,7 +27,7 @@ class DataExtractor:
         elif file_path.endswith('.txt'):
             return DataExtractor.extract_txt_data(file_path)
         else:
-            return DataExtractor.extract_other_data(file_path)
+            raise Exception("unsupported file type")
 
     @staticmethod
     def extract_pdf_data(file_path: str) -> str:
@@ -89,19 +88,4 @@ class DataExtractor:
         except Exception as e:
             return f"Error extracting TXT data: {e}"
 
-    @staticmethod
-    def extract_other_data(file_path: str) -> str:
-        """
-        Extract text data from other file formats using textract.
-
-        Args:
-            file_path (str): The path to the file.
-
-        Returns:
-            str: The extracted text data.
-        """
-        try:
-            other_data = textract.process(file_path).decode('utf-8')
-            return other_data
-        except Exception as e:
-            return f"Error extracting data from other file types: {e}"
+   

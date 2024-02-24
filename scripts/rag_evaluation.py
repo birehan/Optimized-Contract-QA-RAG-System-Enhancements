@@ -1,7 +1,8 @@
 from ragas import evaluate
 from logger import logger
 import matplotlib.pyplot as plt
-
+from embedding import EmbeddingFactory, EmbeddingType
+from memory import MemoryType, MemoryFactory
 from datasets import Dataset
 from ragas.metrics import (
     answer_relevancy,
@@ -23,16 +24,25 @@ class RagEvaluation:
                  context_path:str, 
                  question_ans_path:str,
                  template_file_path="../prompts/system_message.txt",
-                 vector_store:VectorStore=VectorStore.CHROMA,
+              
+
+                vector_store:VectorStore=VectorStore.CHROMA,
                  retrieve_type:RetrieverType=RetrieverType.VECTOR_STORE_BACKED,
-                 chunking_strategy:ChunkingStrategy=ChunkingStrategy.SEMANTIC):
+                 chunking_strategy:ChunkingStrategy=ChunkingStrategy.SEMANTIC,
+                 embedding_model: EmbeddingType=EmbeddingType.OPENAI_EMBEDDING,
+                 memory_type: MemoryType=MemoryType.CONVERSATION_BUFFER_WINDOW
+                 
+                 ):
         
         self.rag_chain = RagPipeline(
             template_file_path=template_file_path,
             vector_store=vector_store,
             retrieve_type=retrieve_type,
-            chunking_strategy=chunking_strategy
+            chunking_strategy=chunking_strategy,
+            embedding_model=embedding_model,
+            memory_type=memory_type
         )
+        
         self.rag_chain.add_datasource(context_path)
         self.questions, self.ground_truth = self.extract_qa_dataset(question_ans_path)
     

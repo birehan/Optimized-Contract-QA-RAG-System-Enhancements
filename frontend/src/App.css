@@ -138,3 +138,9 @@ body {
   background-size: 100px 100px;
   background-position: 40px -43px;
 }
+
+.modal-container{
+  border: 1px solid #e7e7e7;
+  box-shadow: 0px 0px 58px rgba(17, 17, 17, 0.1);
+  border-radius: 24px;
+}

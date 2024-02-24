@@ -4,7 +4,7 @@ import re
 class DataCleaner:
 
     @staticmethod
-    def clean_text(self, text:str)-> str:
+    def clean_text( text:str)-> str:
         """
         Clean text for use in a RAG system.
 

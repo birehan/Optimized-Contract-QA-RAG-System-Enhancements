@@ -1,71 +1,16 @@
-import json
-
-from langchain.document_loaders import TextLoader
-from langchain.text_splitter import CharacterTextSplitter  
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
-from langchain.schema.runnable import RunnablePassthrough
-from langchain.schema.output_parser import StrOutputParser
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import Weaviate
-
-from langchain.agents.format_scratchpad import format_to_openai_function_messages
-from langchain.tools.render import format_tool_to_openai_function
-
+from chunking import Chunking
+from databases import VectorStoreFactory
+from embedding import EmbeddingFactory
+from memory import MemoryFactory
+from retrivers import RetrieverFactory
 from logger import logger
-from datasets import Dataset
-import random
 import docx
-
-import weaviate
 from dotenv import load_dotenv,find_dotenv
-from weaviate.embedded import EmbeddedOptions
+from chunking import  Chunking
+from data_extractor import DataExtractor
 
-from ragas import evaluate
-from ragas.metrics import ( faithfulness, answer_relevancy, context_recall, context_precision)
-
-from chunking import ChunkingStrategy, Chunking
-
- 
 # Load OpenAI API key from .env file
 load_dotenv(find_dotenv())
-
-
-    
-
-def read_questions_answers(file_path: str) -> tuple[list[str], list[str]]:
-    """
-    Read questions and answers from a text file and return them as two separate lists.
-
-    Args:
-        file_path (str): The file path of the input text file.
-
-    Returns:
-        tuple[list[str], list[str]]: A tuple containing two lists - one for questions and one for answers.
-    """
-    questions = []
-    answers = []
-
-    try:
-        with open(file_path, "r") as file:
-            lines = file.readlines()
-            i = 0
-            while i < len(lines):
-                if lines[i].startswith("Q"):
-                    question = lines[i].split(": ", 1)[-1].strip()  # Remove initials
-                    answer = lines[i+1].split(": ", 1)[-1].strip()  # Remove initials
-                    questions.append(question)
-                    answers.append(answer)
-                    i += 2
-                else:
-                    i += 1
-
-    except FileNotFoundError:
-        print(f"Error: File not found at path '{file_path}'")
-        return [], []
-
-    return questions, answers
-
 
 def convert_docx_to_txt(docx_file_path: str) -> str:
     """
@@ -104,137 +49,72 @@ def convert_docx_to_txt(docx_file_path: str) -> str:
         return ""
 
 
+def get_rag_options():
+    return [
+        Chunking.list_supported_chunkings(),
+        VectorStoreFactory.list_supported_vectorStores(),
+        EmbeddingFactory.list_supported_embeddings(),
+        MemoryFactory.list_supported_memory_types(),
+        RetrieverFactory.list_supported_retrivers()
+    ]
 
-def create_langchain_pipeline(retriever, template, temperature=0):
+
+def extract_qa_dataset(question_ans_path):
     try:
-
-        tool_functions = list(map(format_tool_to_openai_function, []))
-
-        # Define LLM
-        llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=temperature)
-
-        llm = ChatOpenAI(temperature=0.1, model = 'gpt-4-1106-preview')\
-            .bind(functions = tool_functions)
-
-
-        # Define prompt template
+        extracted_text = DataExtractor.extract_data(question_ans_path)
         
-        prompt = ChatPromptTemplate.from_template(template)
+        blocks = extracted_text.split('\n')
 
-        # Setup RAG pipeline
-        rag_chain = (
-            {"context": retriever,  "question": RunnablePassthrough()} 
-            | prompt 
-            | llm
-            | StrOutputParser() 
-        )
+        questions = []
+        answers = []
 
-        logger.info("langchain with rag pipeline created successfully.")
-        return rag_chain
-
-    except Exception as e:
-        logger.error(f"An unexpected error occurred: {e}")
-        return None 
-
-def create_retriever(chunks):
-    try:
-        # Load OpenAI API key from .env file
-        load_dotenv(find_dotenv())
-
-        client = weaviate.Client(
-            embedded_options = EmbeddedOptions()
-        )
-        # Populate vector database
-        vectorstore = Weaviate.from_documents(
-            client = client,    
-            documents = chunks,
-            embedding = OpenAIEmbeddings(),
-            by_text = False
-        )
-
-        retriever = vectorstore.as_retriever()
-        logger.info("retriever create succesfully.")
-
-        return retriever
+        i = 0
+        while i < len(blocks):
+            blocks[i] = blocks[i].strip()
+            if blocks[i].startswith("Q"):
+                question = blocks[i].split(": ", 1)[-1].strip()  # Remove initials
+                answer = blocks[i+1].split(": ", 1)[-1].strip() # Remove initials
+                questions.append(question)
+                answers.append(answer)
+                i += 2
+            else:
+                i += 1
     
-    except Exception as e:
-        logger.error(f"An unexpected error occurred: {e}")
-  
-
-def load_file(file_path):
-    try:
-
-        # Open the file in read mode
-        with open(file_path, 'r') as file:
-            # Read the contents of the file
-            file_contents = file.read()   
-        
-        return file_contents
+        return questions, answers
         
     except Exception as e:
         logger.error(f"An unexpected error occurred: {e}")
-        return None 
 
-def ragas_evaulation(response):
+
+def extract_and_optimize_qa_dataset(question_ans_path, optimized_questions):
     try:
-        result = evaluate(
-            dataset = response, 
-            metrics=[
-                context_precision,
-                context_recall,
-                faithfulness,
-                answer_relevancy,
-            ],
-        )
+        extracted_text = DataExtractor.extract_data(question_ans_path)
+        
+        blocks = extracted_text.split('\n')
 
-        df = result.to_pandas()
-        return df
+        questions = []
+        answers = []
 
-      
+        i = 0
+        while i < len(blocks):
+            blocks[i] = blocks[i].strip()
+            if blocks[i].startswith("Q"):
+                question = optimized_questions.pop(0)  # Pop the next optimized question
+                answer = blocks[i+1].split(": ", 1)[-1].strip() # Remove initials
+                questions.append(question)
+                answers.append(answer)
+                i += 2
+            else:
+                i += 1
+        
+        # Save the optimized dataset
+        optimized_file_path = question_ans_path.replace('.docx', '_optimized_questions.txt')
+        with open(optimized_file_path, 'w') as f:
+            for q, a in zip(questions, answers):
+                f.write(f"Q: {q}\n")
+                f.write(f"A: {a}\n")
+        
+        return optimized_file_path
+        
     except Exception as e:
         logger.error(f"An unexpected error occurred: {e}")
-        return None 
-
-
-def get_generated_prompt_with_evaulation(question):
-    try:
-        chunks = create_chunks()
-        retriever = create_retriever(chunks)
-
-        prompt_template = load_file('../prompts/prompt-generation-prompt.txt')
-        prompt_rag_chain = create_langchain_pipeline(retriever, prompt_template)
-
-        generated_prompts = prompt_rag_chain.invoke(question)
-        prompt_list  = json.loads(generated_prompts)
-
-        questions = [item['prompt'] for item in prompt_list]
-        questions = [item['question'] for item in prompt_list]
-        answers = [item['answer'] for item in prompt_list]
-        contexts = [item['context'] for item in prompt_list]
-
-
-
-        ground_truths = [[item['ground_truth']] for item in prompt_list]
-
-
-        # response = generate_testcase_and_context(questions, ground_truths, retriever, evaulation_rag_chain)
-
-              
-        data = {
-            "question": questions, # list 
-            "answer": answers, # list
-            "contexts": contexts, # list list
-            "ground_truths": ground_truths # list Lists
-        }
-
-
-        # Convert dict to dataset
-        dataset = Dataset.from_dict(data)
-
-        df = ragas_evaulation(dataset)
-
-        return df
-    
-    except Exception as e:
-        logger.error(f"An unexpected error occurred: {e}")
-        return None 

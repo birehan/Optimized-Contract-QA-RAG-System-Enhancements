@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 
 const HomePage = () => {
@@ -20,27 +21,29 @@ const HomePage = () => {
           <div className="relative h-56 mx-auto mt-24 w-[28rem] overflow-hidden " >
   <div className="absolute top-0 left-0">
 
-  <a
+  <Link
             className="ml-8 relative inline-flex items-center justify-center rounded-full py-4 px-8  text-lg font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-[#25A7FF] text-white hover:text-slate-100 
             hover:bg-[#25A7FF] active:bg-[#25A7FF] active:text-blue-100 focus-visible:outline-blue-600 md:shadow-2xl 
             md:shadow-[#25A7FF] z-40"
-            href="https://login.lizzyai.com/JoinWaitlist"
+            to="/contract-assistant"
+            
           >
             <span>Contract Assistant</span>
-          </a>
+          </Link>
 
   </div>
   <div className="absolute bottom-0 right-0 ">
     
-  <a
+  <Link
             className="mr-8 mb-16 relative inline-flex items-center justify-center rounded-full py-4 px-8  text-lg font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 
             bg-[#ac62d5] text-white hover:text-slate-100 
             hover:bg-[#ac62d5] active:bg-[#ac62d5] active:text-blue-100 focus-visible:outline-blue-600 md:shadow-2xl 
             md:shadow-[#ac62d5] z-40"
-            href="https://login.lizzyai.com/JoinWaitlist"
+            to="/rag-evaluation"
+
           >
             <span>Evaluate Assistant</span>
-          </a>
+          </Link>
   </div>
 </div>
         

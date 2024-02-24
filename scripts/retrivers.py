@@ -1,14 +1,6 @@
 from dotenv import load_dotenv,find_dotenv
-
-
-
-
-
-
-
 from logger import logger
 from langchain.retrievers.multi_query import MultiQueryRetriever
-
 from langchain.retrievers import ContextualCompressionRetriever
 from langchain.retrievers.document_compressors import LLMChainExtractor
 from langchain_openai import OpenAI
@@ -18,17 +10,17 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.storage import InMemoryStore
 from langchain_openai import ChatOpenAI
 
-# from langchain_community.embeddings import Embeddings
-# from langchain.retrievers import BM25Retriever, EnsembleRetriever
+from advanced_retriver import get_advanced_retriver
 
 from enum import Enum
 
 class RetrieverType(Enum):
-    VECTOR_STORE_BACKED = "vector_store_backed"
-    MULTIQUERY = "multiquery"
-    CONTEXTUAL_COMPRESSION = "contextual_compression"
-    ENSEMBLE_RETRIEVER = "ensemble_retriever"
-    PARENT_DOCUMENT = "parent_document"
+    VECTOR_STORE_BACKED = "VectorStore Backed"
+    MULTIQUERY = "Multiquery"
+    CONTEXTUAL_COMPRESSION = "Contextual Compression"
+    PARENT_DOCUMENT = "Parent Document"
+    ADVANCED_RETRIEVER = "Advanced Retriever"
+
     
 
 class RetrieverFactory:
@@ -37,7 +29,7 @@ class RetrieverFactory:
         # Load OpenAI API key from .env file
         load_dotenv(find_dotenv())
         
-    def create_retriver(self, vector_store,  retrieve_type:RetrieverType=RetrieverType.VECTOR_STORE_BACKED):
+    def create_retriver(self, vector_store,  retrieve_type:RetrieverType=RetrieverType.VECTOR_STORE_BACKED, chunks:list=[]):
         try:
             if retrieve_type == retrieve_type.VECTOR_STORE_BACKED:
                 return self._create_vectorstore_backend_retriver(vector_store)
@@ -47,8 +39,8 @@ class RetrieverFactory:
                 return self._create_compression_retriver(vector_store),
             elif retrieve_type == retrieve_type.PARENT_DOCUMENT:
                 return self._create_parent_document_retriver(vector_store)
-            # elif vector_store == retriever.ENSEMBLE:
-            #     return self._create_ensemble_retriver(chunks, vector_store)
+            elif retrieve_type == retrieve_type.ADVANCED_RETRIEVER:
+                return self._create_advanced_retriver(vector_store, chunks)
             else:
                 logger.error("Invalid vector store type provided.")
                 return None
@@ -94,16 +86,16 @@ class RetrieverFactory:
         logger.info("parent document retriever created successfully.")
         return retriever
     
-    # The storage layer for the parent documents
+    def _create_advanced_retriver(self, vector_store, chunks):
+        return get_advanced_retriver(vector_store, chunks)
+           
+    @staticmethod
+    def list_supported_retrivers():
+        """
+        """
 
-    # def _create_ensemble_retriver(self, chunks, vector_store):
-    #     # Assuming you have a ChromaDB client instance already created
-    #     bm25_retriever = BM25Retriever.from_documents(chunks)
-    #     retriever = EnsembleRetriever(
-    #     retrievers=[
-    #             bm25_retriever,
-    #             self._create_vectorstore_backend_retriver(vector_store)],
-    #             weights=[0.5, 0.5]
-    #         )
-    #     logger.info("ensemble retriever created successfully.")
-    #     return retriever
+        return {
+            "items": [{"key": enum_type.name, "value":enum_type.value } for enum_type in RetrieverType],
+            "name": "retrieverType",
+            "label": "Retriever Types"
+        }

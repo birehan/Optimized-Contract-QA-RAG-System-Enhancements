@@ -63,3 +63,50 @@ HTTP response body: {"code":3,"message":"Vector dimension 1536 does not match th
 2024-02-23 19:54:32,552:logger:An unexpected error occurred: Could not convert HumanMessage(content='Who are the parties to the Agreement and what are their defined names?') with type HumanMessage: did not recognize Python value type when inferring an Arrow data type
 2024-02-23 20:14:43,274:logger:An unexpected error occurred: Could not convert HumanMessage(content='Who are the parties to the Agreement and what are their defined names?') with type HumanMessage: did not recognize Python value type when inferring an Arrow data type
 2024-02-23 20:17:20,952:logger:An unexpected error occurred: Could not convert HumanMessage(content='Who are the parties to the Agreement and what are their defined names?') with type HumanMessage: did not recognize Python value type when inferring an Arrow data type
+2024-02-25 22:31:29,194:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-25 22:31:29,232:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:31:29,277:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-25 22:33:04,881:logger:An unexpected error occurred: You haven't specified an Api-Key.
+2024-02-25 22:33:04,882:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:33:04,901:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-25 22:33:28,705:logger:An unexpected error occurred: You haven't specified an Api-Key.
+2024-02-25 22:33:28,706:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:33:28,723:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-25 22:34:51,271:logger:An unexpected error occurred: You haven't specified an Api-Key.
+2024-02-25 22:34:51,273:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:34:51,290:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-25 22:36:19,385:logger:An unexpected error occurred: You haven't specified an Api-Key.
+2024-02-25 22:36:19,385:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:36:19,403:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-25 22:50:59,852:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-25 22:50:59,854:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:50:59,880:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-26 01:33:30,407:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-26 01:33:30,411:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-26 01:33:30,452:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-26 01:37:11,008:logger:An unexpected error occurred: clean_text() missing 1 required positional argument: 'text'
+2024-02-26 01:39:47,247:logger:An unexpected error occurred: clean_text() missing 1 required positional argument: 'text'
+2024-02-26 01:41:15,421:logger:An unexpected error occurred: clean_text() missing 1 required positional argument: 'text'
+2024-02-26 04:16:29,976:logger:An unexpected error occurred: Embedding dimension 384 does not match collection dimensionality 1536
+2024-02-26 04:16:30,005:logger:An unexpected error occurred: Embedding dimension 384 does not match collection dimensionality 1536
+2024-02-26 12:36:20,902:logger:An unexpected error occurred: 1 validation error for BM25Retriever
+docs
+  field required (type=value_error.missing)
+2024-02-26 12:36:20,929:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-26 13:18:30,676:logger:An unexpected error occurred: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-52rg5***************************************fqow. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}

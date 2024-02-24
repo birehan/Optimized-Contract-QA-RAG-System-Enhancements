@@ -301,3 +301,331 @@ HTTP response body: {"code":3,"message":"Vector dimension 1536 does not match th
 2024-02-24 09:06:52,756:logger:ChromaDB vectorstore created successfully.
 2024-02-24 09:06:52,757:logger:vectorstore_backend_retriver created successfully.
 2024-02-24 09:06:52,773:logger:langchain with rag pipeline created successfully.
+2024-02-25 21:39:10,966:logger:ChromaDB vectorstore created successfully.
+2024-02-25 21:39:10,966:logger:vectorstore_backend_retriver created successfully.
+2024-02-25 21:39:10,983:logger:langchain with rag pipeline created successfully.
+2024-02-25 21:41:42,818:logger:ChromaDB vectorstore created successfully.
+2024-02-25 21:41:42,819:logger:vectorstore_backend_retriver created successfully.
+2024-02-25 21:41:42,846:logger:langchain with rag pipeline created successfully.
+2024-02-25 21:42:56,690:logger:ChromaDB vectorstore created successfully.
+2024-02-25 21:42:56,691:logger:vectorstore_backend_retriver created successfully.
+2024-02-25 21:42:56,708:logger:langchain with rag pipeline created successfully.
+2024-02-25 22:31:29,194:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-25 22:31:29,232:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:31:29,277:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-25 22:33:04,881:logger:An unexpected error occurred: You haven't specified an Api-Key.
+2024-02-25 22:33:04,882:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:33:04,901:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-25 22:33:28,705:logger:An unexpected error occurred: You haven't specified an Api-Key.
+2024-02-25 22:33:28,706:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:33:28,723:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-25 22:34:51,271:logger:An unexpected error occurred: You haven't specified an Api-Key.
+2024-02-25 22:34:51,273:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:34:51,290:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-25 22:36:03,556:logger:ChromaDB vectorstore created successfully.
+2024-02-25 22:36:03,557:logger:vectorstore_backend_retriver created successfully.
+2024-02-25 22:36:03,577:logger:langchain with rag pipeline created successfully.
+2024-02-25 22:36:19,385:logger:An unexpected error occurred: You haven't specified an Api-Key.
+2024-02-25 22:36:19,385:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:36:19,403:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-25 22:36:28,176:logger:ChromaDB vectorstore created successfully.
+2024-02-25 22:36:28,177:logger:vectorstore_backend_retriver created successfully.
+2024-02-25 22:36:28,190:logger:langchain with rag pipeline created successfully.
+2024-02-25 22:36:59,075:logger:ChromaDB vectorstore created successfully.
+2024-02-25 22:36:59,075:logger:vectorstore_backend_retriver created successfully.
+2024-02-25 22:36:59,091:logger:langchain with rag pipeline created successfully.
+2024-02-25 22:48:21,260:logger:ChromaDB vectorstore created successfully.
+2024-02-25 22:48:21,261:logger:parent document retriever created successfully.
+2024-02-25 22:48:21,276:logger:langchain with rag pipeline created successfully.
+2024-02-25 22:48:57,329:logger:ChromaDB vectorstore created successfully.
+2024-02-25 22:48:57,330:logger:parent document retriever created successfully.
+2024-02-25 22:48:57,349:logger:langchain with rag pipeline created successfully.
+2024-02-25 22:50:59,852:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-25 22:50:59,854:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-25 22:50:59,880:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-25 22:51:29,842:logger:ChromaDB vectorstore created successfully.
+2024-02-25 22:51:29,843:logger:parent document retriever created successfully.
+2024-02-25 22:51:29,866:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:11:16,853:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:11:16,854:logger:parent document retriever created successfully.
+2024-02-25 23:11:16,871:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:13:32,746:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:13:32,748:logger:parent document retriever created successfully.
+2024-02-25 23:13:32,771:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:14:38,826:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:14:38,829:logger:parent document retriever created successfully.
+2024-02-25 23:14:38,851:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:15:10,066:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:15:10,068:logger:parent document retriever created successfully.
+2024-02-25 23:15:10,091:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:16:18,412:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:16:18,413:logger:parent document retriever created successfully.
+2024-02-25 23:16:18,437:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:16:44,157:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:16:44,158:logger:parent document retriever created successfully.
+2024-02-25 23:16:44,182:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:16:50,248:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:16:50,249:logger:parent document retriever created successfully.
+2024-02-25 23:16:50,275:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:18:16,432:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:18:16,434:logger:parent document retriever created successfully.
+2024-02-25 23:18:16,458:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:18:24,063:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:18:24,064:logger:parent document retriever created successfully.
+2024-02-25 23:18:24,086:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:21:38,393:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:21:38,394:logger:parent document retriever created successfully.
+2024-02-25 23:21:38,418:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:23:27,439:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:23:27,442:logger:vectorstore_backend_retriver created successfully.
+2024-02-25 23:23:27,468:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:24:35,662:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:24:35,663:logger:vectorstore_backend_retriver created successfully.
+2024-02-25 23:24:35,680:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:26:03,617:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:26:03,620:logger:vectorstore_backend_retriver created successfully.
+2024-02-25 23:26:03,655:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:26:41,663:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:26:41,665:logger:vectorstore_backend_retriver created successfully.
+2024-02-25 23:26:41,690:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:38:17,049:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:38:17,062:logger:vectorstore_backend_retriver created successfully.
+2024-02-25 23:38:17,093:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:47:37,979:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:47:37,980:logger:parent document retriever created successfully.
+2024-02-25 23:47:37,998:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:53:18,490:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:53:18,491:logger:parent document retriever created successfully.
+2024-02-25 23:53:18,513:logger:langchain with rag pipeline created successfully.
+2024-02-25 23:59:29,038:logger:ChromaDB vectorstore created successfully.
+2024-02-25 23:59:29,040:logger:parent document retriever created successfully.
+2024-02-25 23:59:29,061:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:26:51,878:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:26:51,879:logger:parent document retriever created successfully.
+2024-02-26 00:26:51,900:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:32:39,844:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:32:39,845:logger:parent document retriever created successfully.
+2024-02-26 00:32:39,866:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:34:11,327:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:34:11,329:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 00:34:11,351:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:37:37,975:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:37:37,977:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 00:37:38,006:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:41:40,226:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:41:40,227:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 00:41:40,243:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:44:03,100:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:44:03,102:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 00:44:03,130:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:47:21,316:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:47:21,317:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 00:47:21,334:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:48:46,967:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:48:46,969:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 00:48:46,987:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:49:23,853:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:49:23,854:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 00:49:23,872:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:50:57,664:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:50:57,665:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 00:50:57,683:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:56:04,865:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:56:04,867:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 00:56:04,883:logger:langchain with rag pipeline created successfully.
+2024-02-26 00:57:45,458:logger:ChromaDB vectorstore created successfully.
+2024-02-26 00:57:45,459:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 00:57:45,477:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:13:53,627:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:13:53,628:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 01:13:53,645:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:15:07,037:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:15:07,039:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 01:15:07,075:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:16:24,493:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:16:24,496:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 01:16:24,540:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:17:07,380:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:17:07,383:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 01:17:07,419:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:18:16,765:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:18:16,766:logger:parent document retriever created successfully.
+2024-02-26 01:18:16,792:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:25:58,606:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:25:58,607:logger:parent document retriever created successfully.
+2024-02-26 01:25:58,630:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:30:46,609:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:30:46,610:logger:parent document retriever created successfully.
+2024-02-26 01:30:46,628:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:32:36,026:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:32:36,027:logger:parent document retriever created successfully.
+2024-02-26 01:32:36,050:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:33:30,407:logger:An unexpected error occurred: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530. Timeout)>
+2024-02-26 01:33:30,411:logger:An unexpected error occurred: 'NoneType' object has no attribute 'as_retriever'
+2024-02-26 01:33:30,452:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-26 01:33:53,224:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:33:53,225:logger:parent document retriever created successfully.
+2024-02-26 01:33:53,246:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:37:11,008:logger:An unexpected error occurred: clean_text() missing 1 required positional argument: 'text'
+2024-02-26 01:37:11,008:logger:do data to add
+2024-02-26 01:39:47,135:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:39:47,136:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 01:39:47,153:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:39:47,247:logger:An unexpected error occurred: clean_text() missing 1 required positional argument: 'text'
+2024-02-26 01:39:47,248:logger:do data to add
+2024-02-26 01:41:15,284:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:41:15,288:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 01:41:15,323:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:41:15,421:logger:An unexpected error occurred: clean_text() missing 1 required positional argument: 'text'
+2024-02-26 01:41:15,424:logger:do data to add
+2024-02-26 01:41:23,802:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:41:23,804:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 01:41:23,823:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:42:36,097:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:42:36,098:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 01:42:36,117:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:45:05,741:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:45:05,743:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 01:45:05,762:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:45:17,366:logger:Data source added to the system successfully
+2024-02-26 01:47:20,643:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:47:20,643:logger:parent document retriever created successfully.
+2024-02-26 01:47:20,663:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:48:20,589:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:48:20,591:logger:parent document retriever created successfully.
+2024-02-26 01:48:20,612:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:49:44,219:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:49:44,221:logger:parent document retriever created successfully.
+2024-02-26 01:49:44,254:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:51:29,373:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:51:29,374:logger:parent document retriever created successfully.
+2024-02-26 01:51:29,395:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:51:48,344:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:51:48,345:logger:parent document retriever created successfully.
+2024-02-26 01:51:48,366:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:52:04,366:logger:ChromaDB vectorstore created successfully.
+2024-02-26 01:52:04,367:logger:parent document retriever created successfully.
+2024-02-26 01:52:04,390:logger:langchain with rag pipeline created successfully.
+2024-02-26 01:52:30,801:logger:Data source added to the system successfully
+2024-02-26 01:59:54,675:logger:Data source added to the system successfully
+2024-02-26 02:01:36,741:logger:ChromaDB vectorstore created successfully.
+2024-02-26 02:01:36,742:logger:parent document retriever created successfully.
+2024-02-26 02:01:36,763:logger:langchain with rag pipeline created successfully.
+2024-02-26 02:01:44,502:logger:Data source added to the system successfully
+2024-02-26 02:03:18,777:logger:Data source added to the system successfully
+2024-02-26 02:04:14,283:logger:ChromaDB vectorstore created successfully.
+2024-02-26 02:04:14,284:logger:parent document retriever created successfully.
+2024-02-26 02:04:14,304:logger:langchain with rag pipeline created successfully.
+2024-02-26 02:05:00,312:logger:Data source added to the system successfully
+2024-02-26 02:05:16,388:logger:Data source added to the system successfully
+2024-02-26 02:06:37,756:logger:Data source added to the system successfully
+2024-02-26 02:32:39,039:logger:ChromaDB vectorstore created successfully.
+2024-02-26 02:32:39,041:logger:parent document retriever created successfully.
+2024-02-26 02:32:39,062:logger:langchain with rag pipeline created successfully.
+2024-02-26 02:32:58,288:logger:Data source added to the system successfully
+2024-02-26 03:13:08,497:logger:ChromaDB vectorstore created successfully.
+2024-02-26 03:13:08,499:logger:parent document retriever created successfully.
+2024-02-26 03:13:08,534:logger:langchain with rag pipeline created successfully.
+2024-02-26 03:13:08,782:logger:data loaded to vector database successfully
+2024-02-26 03:13:16,675:logger:Data source added to the system successfully
+2024-02-26 03:31:44,406:logger:ChromaDB vectorstore created successfully.
+2024-02-26 03:31:44,410:logger:parent document retriever created successfully.
+2024-02-26 03:31:44,447:logger:langchain with rag pipeline created successfully.
+2024-02-26 03:31:44,677:logger:data loaded to vector database successfully
+2024-02-26 03:31:53,143:logger:Data source added to the system successfully
+2024-02-26 04:16:10,526:logger:ChromaDB vectorstore created successfully.
+2024-02-26 04:16:10,528:logger:parent document retriever created successfully.
+2024-02-26 04:16:10,546:logger:langchain with rag pipeline created successfully.
+2024-02-26 04:16:10,681:logger:data loaded to vector database successfully
+2024-02-26 04:16:29,976:logger:An unexpected error occurred: Embedding dimension 384 does not match collection dimensionality 1536
+2024-02-26 04:16:30,005:logger:An unexpected error occurred: Embedding dimension 384 does not match collection dimensionality 1536
+2024-02-26 04:23:51,435:logger:ChromaDB vectorstore created successfully.
+2024-02-26 04:23:51,438:logger:parent document retriever created successfully.
+2024-02-26 04:23:51,464:logger:langchain with rag pipeline created successfully.
+2024-02-26 04:23:51,606:logger:data loaded to vector database successfully
+2024-02-26 04:24:02,127:logger:ChromaDB vectorstore created successfully.
+2024-02-26 04:24:02,129:logger:parent document retriever created successfully.
+2024-02-26 04:24:02,159:logger:langchain with rag pipeline created successfully.
+2024-02-26 04:24:02,435:logger:data loaded to vector database successfully
+2024-02-26 04:24:10,800:logger:Data source added to the system successfully
+2024-02-26 04:42:25,719:logger:ChromaDB vectorstore created successfully.
+2024-02-26 04:42:25,719:logger:parent document retriever created successfully.
+2024-02-26 04:42:25,738:logger:langchain with rag pipeline created successfully.
+2024-02-26 09:00:51,349:logger:ChromaDB vectorstore created successfully.
+2024-02-26 09:00:51,350:logger:parent document retriever created successfully.
+2024-02-26 09:00:51,372:logger:langchain with rag pipeline created successfully.
+2024-02-26 09:01:39,700:logger:ChromaDB vectorstore created successfully.
+2024-02-26 09:01:39,700:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 09:01:39,720:logger:langchain with rag pipeline created successfully.
+2024-02-26 09:04:43,427:logger:ChromaDB vectorstore created successfully.
+2024-02-26 09:04:43,428:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 09:04:43,449:logger:langchain with rag pipeline created successfully.
+2024-02-26 09:05:34,752:logger:ChromaDB vectorstore created successfully.
+2024-02-26 09:05:34,754:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 09:05:34,787:logger:langchain with rag pipeline created successfully.
+2024-02-26 09:06:58,298:logger:ChromaDB vectorstore created successfully.
+2024-02-26 09:06:58,299:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 09:06:58,320:logger:langchain with rag pipeline created successfully.
+2024-02-26 09:08:21,343:logger:ChromaDB vectorstore created successfully.
+2024-02-26 09:08:21,344:logger:parent document retriever created successfully.
+2024-02-26 09:08:21,365:logger:langchain with rag pipeline created successfully.
+2024-02-26 09:53:44,488:logger:ChromaDB vectorstore created successfully.
+2024-02-26 09:53:44,489:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 09:53:44,525:logger:langchain with rag pipeline created successfully.
+2024-02-26 09:54:15,879:logger:ChromaDB vectorstore created successfully.
+2024-02-26 09:54:15,883:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 09:54:15,922:logger:langchain with rag pipeline created successfully.
+2024-02-26 10:01:07,796:logger:ChromaDB vectorstore created successfully.
+2024-02-26 10:01:07,799:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 10:01:07,832:logger:langchain with rag pipeline created successfully.
+2024-02-26 10:02:01,030:logger:ChromaDB vectorstore created successfully.
+2024-02-26 10:02:01,031:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 10:02:01,056:logger:langchain with rag pipeline created successfully.
+2024-02-26 10:38:14,762:logger:ChromaDB vectorstore created successfully.
+2024-02-26 10:38:14,764:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 10:38:14,782:logger:langchain with rag pipeline created successfully.
+2024-02-26 10:59:57,223:logger:ChromaDB vectorstore created successfully.
+2024-02-26 10:59:57,224:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 10:59:57,241:logger:langchain with rag pipeline created successfully.
+2024-02-26 11:00:29,068:logger:Data source added to the system successfully
+2024-02-26 12:01:09,461:logger:ChromaDB vectorstore created successfully.
+2024-02-26 12:01:09,462:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 12:01:09,480:logger:langchain with rag pipeline created successfully.
+2024-02-26 12:36:20,887:logger:ChromaDB vectorstore created successfully.
+2024-02-26 12:36:20,902:logger:An unexpected error occurred: 1 validation error for BM25Retriever
+docs
+  field required (type=value_error.missing)
+2024-02-26 12:36:20,929:logger:An unexpected error occurred: 1 validation error for ConversationalRetrievalChain
+retriever
+  none is not an allowed value (type=type_error.none.not_allowed)
+2024-02-26 12:45:25,488:logger:ChromaDB vectorstore created successfully.
+2024-02-26 12:45:25,490:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 12:45:25,515:logger:langchain with rag pipeline created successfully.
+2024-02-26 12:51:12,408:logger:ChromaDB vectorstore created successfully.
+2024-02-26 12:59:42,584:logger:ChromaDB vectorstore created successfully.
+2024-02-26 12:59:42,586:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 12:59:42,609:logger:langchain with rag pipeline created successfully.
+2024-02-26 13:18:30,676:logger:An unexpected error occurred: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-52rg5***************************************fqow. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-02-26 13:18:31,587:logger:ChromaDB vectorstore created successfully.
+2024-02-26 13:18:31,590:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 13:18:31,623:logger:langchain with rag pipeline created successfully.
+2024-02-26 13:44:34,413:logger:ChromaDB vectorstore created successfully.
+2024-02-26 13:44:34,415:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 13:44:34,438:logger:langchain with rag pipeline created successfully.
+2024-02-26 14:38:48,156:logger:ChromaDB vectorstore created successfully.
+2024-02-26 14:38:48,157:logger:vectorstore_backend_retriver created successfully.
+2024-02-26 14:38:48,187:logger:langchain with rag pipeline created successfully.
