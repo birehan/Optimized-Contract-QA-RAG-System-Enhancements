@@ -183,3 +183,121 @@ HTTP response body: {"code":3,"message":"Vector dimension 1536 does not match th
 2024-02-23 21:18:24,770:logger:vectorstore_backend_retriver created successfully.
 2024-02-23 21:18:24,793:logger:langchain with rag pipeline created successfully.
 2024-02-23 21:18:44,927:logger:Data source added to the system successfully
+2024-02-23 23:45:31,064:logger:ChromaDB vectorstore created successfully.
+2024-02-23 23:45:31,065:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 23:45:31,080:logger:langchain with rag pipeline created successfully.
+2024-02-23 23:47:35,535:logger:ChromaDB vectorstore created successfully.
+2024-02-23 23:47:35,536:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 23:47:35,553:logger:langchain with rag pipeline created successfully.
+2024-02-23 23:48:50,326:logger:ChromaDB vectorstore created successfully.
+2024-02-23 23:48:50,327:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 23:48:50,342:logger:langchain with rag pipeline created successfully.
+2024-02-23 23:50:50,324:logger:ChromaDB vectorstore created successfully.
+2024-02-23 23:50:50,325:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 23:50:50,339:logger:langchain with rag pipeline created successfully.
+2024-02-23 23:52:30,734:logger:ChromaDB vectorstore created successfully.
+2024-02-23 23:52:30,735:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 23:52:30,749:logger:langchain with rag pipeline created successfully.
+2024-02-23 23:57:18,100:logger:ChromaDB vectorstore created successfully.
+2024-02-23 23:57:18,101:logger:vectorstore_backend_retriver created successfully.
+2024-02-23 23:57:18,115:logger:langchain with rag pipeline created successfully.
+2024-02-23 23:58:11,299:logger:Data source added to the system successfully
+2024-02-24 07:30:18,841:logger:ChromaDB vectorstore created successfully.
+2024-02-24 07:30:18,843:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 07:30:18,859:logger:langchain with rag pipeline created successfully.
+2024-02-24 07:32:38,428:logger:Data source added to the system successfully
+2024-02-24 07:55:40,319:logger:ChromaDB vectorstore created successfully.
+2024-02-24 07:55:40,320:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 07:55:40,335:logger:langchain with rag pipeline created successfully.
+2024-02-24 07:57:18,362:logger:ChromaDB vectorstore created successfully.
+2024-02-24 07:57:18,363:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 07:57:18,377:logger:langchain with rag pipeline created successfully.
+2024-02-24 07:59:10,263:logger:ChromaDB vectorstore created successfully.
+2024-02-24 07:59:10,264:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 07:59:10,425:logger:langchain with rag pipeline created successfully.
+2024-02-24 07:59:17,655:logger:Data source added to the system successfully
+2024-02-24 08:01:57,166:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:01:57,167:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:01:57,181:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:02:04,660:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:02:04,660:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:02:04,818:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:06:40,185:logger:Data source added to the system successfully
+2024-02-24 08:11:00,935:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:11:00,936:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:11:00,952:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:11:13,554:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:11:13,555:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:11:13,723:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:11:18,898:logger:Data source added to the system successfully
+2024-02-24 08:14:31,118:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:14:31,118:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:14:31,137:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:14:33,640:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:14:33,641:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:14:33,824:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:16:54,538:logger:Data source added to the system successfully
+2024-02-24 08:19:13,837:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:19:13,838:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:19:13,853:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:19:19,594:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:19:19,595:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:19:19,772:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:19:27,835:logger:Data source added to the system successfully
+2024-02-24 08:21:09,951:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:21:09,952:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:21:09,968:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:21:14,024:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:21:14,025:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:21:14,183:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:22:23,545:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:22:23,545:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:22:23,560:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:22:28,023:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:22:28,024:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:22:28,207:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:24:31,844:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:24:31,846:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:24:31,869:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:24:35,148:logger:Data source added to the system successfully
+2024-02-24 08:24:49,743:logger:Data source added to the system successfully
+2024-02-24 08:27:30,259:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:27:30,259:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:27:30,276:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:32:05,936:logger:Data source added to the system successfully
+2024-02-24 08:45:23,567:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:45:23,568:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:45:23,584:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:47:51,441:logger:Data source added to the system successfully
+2024-02-24 08:50:32,935:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:50:32,937:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:50:32,954:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:50:41,661:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:50:41,661:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:50:41,879:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:53:42,698:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:53:42,699:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:53:42,716:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:55:45,660:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:55:45,661:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:55:45,677:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:55:49,423:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:55:49,424:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:55:49,689:logger:langchain with rag pipeline created successfully.
+2024-02-24 08:57:00,402:logger:ChromaDB vectorstore created successfully.
+2024-02-24 08:57:00,403:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 08:57:00,422:logger:langchain with rag pipeline created successfully.
+2024-02-24 09:01:37,424:logger:Data source added to the system successfully
+2024-02-24 09:03:59,467:logger:ChromaDB vectorstore created successfully.
+2024-02-24 09:03:59,468:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 09:03:59,486:logger:langchain with rag pipeline created successfully.
+2024-02-24 09:04:06,753:logger:ChromaDB vectorstore created successfully.
+2024-02-24 09:04:06,753:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 09:04:06,771:logger:langchain with rag pipeline created successfully.
+2024-02-24 09:06:21,760:logger:Data source added to the system successfully
+2024-02-24 09:06:50,468:logger:ChromaDB vectorstore created successfully.
+2024-02-24 09:06:50,469:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 09:06:50,487:logger:langchain with rag pipeline created successfully.
+2024-02-24 09:06:52,756:logger:ChromaDB vectorstore created successfully.
+2024-02-24 09:06:52,757:logger:vectorstore_backend_retriver created successfully.
+2024-02-24 09:06:52,773:logger:langchain with rag pipeline created successfully.

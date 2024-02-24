@@ -1,8 +1,7 @@
 from langchain.text_splitter import CharacterTextSplitter  
-from langchain.embeddings import OpenAIEmbeddings
-from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.embeddings import OpenAIEmbeddings
 
 from logger import logger
 from dotenv import load_dotenv,find_dotenv

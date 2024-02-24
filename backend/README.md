@@ -1,6 +1,6 @@
-# Amharic-RAG-Ad-Builder Backend
+# Optimized-Contract-QA-RAG-System-Enhancements Backend
 
-This repository contains the Flask backend for the "Amharic-RAG-Ad-Builder" project. This backend is responsible for handling requests and managing the business logic associated with the prompt service.
+Optimized-Contract-QA-RAG-System-Enhancements
 
 ## Table of Contents
 
@@ -22,8 +22,8 @@ Provide step-by-step instructions on how to set up the backend locally. Include 
 
 ```bash
 # Example installation steps
-https://github.com/group-3-collab-team/Amharic-RAG-Ad-Builder.git
-cd Amharic-RAG-Ad-Builder/backend
+https://github.com/birehan/Optimized-Contract-QA-RAG-System-Enhancements.git
+cd Optimized-Contract-QA-RAG-System-Enhancements/backend
 pip install -r requirements.txt
 ```
 
