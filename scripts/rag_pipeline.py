@@ -1,17 +1,9 @@
 
 
 from databases import VectorStore, VectorStoreFactory
-import json
-from operator import itemgetter
-
-
-# from langchain.schema.runnable import RunnablePassthrough
-from langchain.schema.output_parser import StrOutputParser
 from langchain_openai import ChatOpenAI
-from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
-
 
 from langchain.prompts import (
     ChatPromptTemplate,
@@ -19,12 +11,8 @@ from langchain.prompts import (
     SystemMessagePromptTemplate,
 )
 
-
 from langchain.memory import ConversationTokenBufferMemory
-from langchain_core.runnables import RunnableLambda, RunnablePassthrough
-
 from logger import logger
-
 from dotenv import load_dotenv,find_dotenv
 
 from chunking import ChunkingStrategy, Chunking
@@ -55,6 +43,7 @@ class RagPipeline:
     def add_datasource(self, file_path):
         try:
             chunks = self.chunking_tool.chunk_data(file_path)
+
             if chunks:
                 ids = self.retriever.add_documents(chunks)
                 self.data_sources[file_path] = ids
@@ -78,38 +67,6 @@ class RagPipeline:
         except Exception as e:
             logger.error(f"An unexpected error occurred: {e}")
             return None 
-
-    # def get_rag_chain(self):
-    #     try:
-
-    #         # tool_functions = list(map(format_tool_to_openai_function, []))
-
-    #         # Define LLM
-
-    #         llm = ChatOpenAI(temperature=0.1, model = 'gpt-4-1106-preview')
-            
-    #         # \
-    #         #     .bind(functions = tool_functions)
-
-
-    #         # Define prompt template
-            
-    #         prompt = ChatPromptTemplate.from_template(self.template)
-
-    #         # Setup RAG pipeline
-    #         rag_chain = (
-    #             {"context": self.retriever,  "question": RunnablePassthrough()} 
-    #             | prompt 
-    #             | llm
-    #             | StrOutputParser() 
-    #         )
-
-    #         logger.info("langchain with rag pipeline created successfully.")
-    #         return rag_chain
-
-    #     except Exception as e:
-    #         logger.error(f"An unexpected error occurred: {e}")
-    #         return None
         
     def get_rag_chain(self):
         try:
@@ -146,8 +103,7 @@ class RagPipeline:
                     ]
                 ),
             },
-        )
-          
+            )
 
             logger.info("langchain with rag pipeline created successfully.")
             return conversation_chain

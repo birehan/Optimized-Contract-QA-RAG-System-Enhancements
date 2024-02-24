@@ -40,7 +40,7 @@ class RagEvaluation:
     def extract_qa_dataset(self, question_ans_path):
         try:
             extracted_text = DataExtractor.extract_data(question_ans_path)
-            
+          
             blocks = extracted_text.split('\n')
 
             questions = []
@@ -57,7 +57,7 @@ class RagEvaluation:
                     i += 2
                 else:
                     i += 1
-            
+        
             return questions, answers
           
         except Exception as e:

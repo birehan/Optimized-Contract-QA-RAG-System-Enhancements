@@ -1,5 +1,11 @@
 from dotenv import load_dotenv,find_dotenv
-from langchain_openai import OpenAIEmbeddings
+
+
+
+
+
+
+
 from logger import logger
 from langchain.retrievers.multi_query import MultiQueryRetriever
 

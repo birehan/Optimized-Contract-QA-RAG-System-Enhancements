@@ -1,13 +1,13 @@
-from langchain_community.vectorstores import Milvus
+
+
 from dotenv import load_dotenv,find_dotenv
-from langchain_openai import OpenAIEmbeddings
+from langchain_community.embeddings import OpenAIEmbeddings
 from logger import logger
 
 import weaviate
 from weaviate.embedded import EmbeddedOptions
-from langchain.vectorstores import Weaviate
 
-# from langchain_community.embeddings import Embeddings
+from langchain_community.vectorstores import Weaviate
 from langchain_community.vectorstores import Milvus
 from langchain_community.vectorstores import Pinecone
 from langchain_community.vectorstores import Chroma

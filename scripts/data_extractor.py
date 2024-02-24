@@ -18,6 +18,7 @@ class DataExtractor:
         Returns:
             str: The extracted text data.
         """
+
         if file_path.endswith('.pdf'):
             return DataExtractor.extract_pdf_data(file_path)
         elif file_path.endswith('.docx'):
