@@ -7,6 +7,7 @@ from logger import logger
 from dotenv import load_dotenv,find_dotenv
 from enum import Enum
 from data_extractor import DataExtractor
+from data_cleaning import DataCleaner
 
 class ChunkingStrategy(Enum):
     NAIVE = "NAIVE"
@@ -51,10 +52,11 @@ class Chunking:
         try:
             
             text = self.data_extract_tool.extract_data(file_path)
+            cleaned_text = DataCleaner.clean_text(text)
 
             # Chunk the data
             text_splitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
-            chunks = text_splitter.create_documents([text])
+            chunks = text_splitter.create_documents([cleaned_text])
             
             logger.info("data loaded to vector database successfully")
             return chunks
@@ -67,6 +69,7 @@ class Chunking:
 
 
             text = self.data_extract_tool.extract_data(file_path)
+            cleaned_text = DataCleaner.clean_text(text)
 
             # Chunk the data
             text_splitter = RecursiveCharacterTextSplitter(
@@ -75,7 +78,7 @@ class Chunking:
                 length_function=len,
                 is_separator_regex=False,
             )
-            chunks = text_splitter.create_documents([text])
+            chunks = text_splitter.create_documents([cleaned_text])
 
             
             logger.info("data loaded to vector database successfully")
@@ -101,9 +104,11 @@ class Chunking:
 
         try:
             text = self.data_extract_tool.extract_data(file_path)
+            cleaned_text = DataCleaner.clean_text(text)
+
 
             text_splitter = SemanticChunker(OpenAIEmbeddings())
-            chunks = text_splitter.create_documents([text])
+            chunks = text_splitter.create_documents([cleaned_text])
 
             return chunks
     

@@ -4,6 +4,7 @@ from databases import VectorStore, VectorStoreFactory
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
+from langchain_community.question_answering import QuestionAnsweringPipeline
 
 from langchain.prompts import (
     ChatPromptTemplate,
@@ -18,6 +19,7 @@ from dotenv import load_dotenv,find_dotenv
 from chunking import ChunkingStrategy, Chunking
 from data_extractor import DataExtractor
 from retrivers import RetrieverFactory, RetrieverType
+from data_cleaning import DataCleaner
 
 # Load OpenAI API key from .env file
 load_dotenv(find_dotenv())
